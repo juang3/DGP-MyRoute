@@ -53,7 +53,7 @@ de código **CSS**.
 ## Instalación
 
 Una vez instaladas las dependencias y descargada la aplicación, abrimos una
-terminal localizada en el directorio de la misma y ejecutamos la orden `npm install`
+terminal localizada en el directorio de la misma y ejecutamos la orden `sudo npm install -g`
 para realiza la instalación.
 
 Ya completada la instalación, ejecutamos el servidor con la orden `npm start`
