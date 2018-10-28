@@ -1,6 +1,8 @@
 /**
  * CÓDIGO AUTOGENERADO POR EXPRESS
  *
+ * Modificado por: Alejandro Ruiz Becerra
+ * Fecha de modificación: 28/10/2018
  */
 
 var createError = require('http-errors');
@@ -29,6 +31,7 @@ app.use('/users', usersRouter);
 
 // Recoge el error 404 y lo envía al manejador de errores
 app.use(function(req, res, next) {
+  res.status(404).send('Lo sentimos, la página que buscas no existe');
   next(createError(404));
 });
 
