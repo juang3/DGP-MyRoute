@@ -1,6 +1,8 @@
 /**
  * CÓDIGO AUTOGENERADO POR EXPRESS
  *
+ * Modificado por: Alejandro Ruiz Becerra
+ * Fecha de modificación: 28/10/2018
  */
 
 var createError = require('http-errors');
@@ -29,7 +31,7 @@ app.use('/users', usersRouter);
 
 // Recoge el error 404 y lo envía al manejador de errores
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404, "Parece que te has perdido"));
 });
 
 // Manejador de errores
@@ -39,8 +41,8 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // Muestra el error en la página
-  res.status(err.status || 500);
-  res.render('error');
+  (err.status == 404) ? res.render('404') : res.render('error');
+  // res.status(err.status || 500);
 });
 
 module.exports = app;
