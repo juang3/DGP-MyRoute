@@ -14,6 +14,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// Módulo par ala gestión de la Base de Datos
+var mysql = require('mysql');
+
 var app = express();
 
 // Setup del motor de vista
@@ -44,6 +47,27 @@ app.use(function(err, req, res, next) {
   (err.status == 404) ? res.render('404') : res.render('error');
   // res.status(err.status || 500);
 });
+
+/******************************************************************************/
+// GESTIÓN DE LA BASE DE DATOS
+//
+/******************************************************************************/
+
+var conexion = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'usuario',
+  password : '',
+  database : 'my_route'
+});
+
+conexion.connect();
+
+conexion.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
+
+conexion.end();
 
 module.exports = app;
 
