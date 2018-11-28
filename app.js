@@ -13,9 +13,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var lugaresRouter = require('./routes/lugares');
+var imagenRouter = require('./routes/imagen');
+var lugarRouter = require('./routes/lugar');
 
 // Módulo par ala gestión de la Base de Datos
-var mysql = require('mysql');
+
 
 var app = express();
 
@@ -31,6 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/lugares', lugaresRouter);
+app.use('/imagen',imagenRouter);
+app.use('/lugar',lugarRouter);
 
 // Recoge el error 404 y lo envía al manejador de errores
 app.use(function(req, res, next) {
@@ -52,7 +58,7 @@ app.use(function(err, req, res, next) {
 // GESTIÓN DE LA BASE DE DATOS
 //
 /******************************************************************************/
-
+/*
 var conexion = mysql.createConnection({
   host     : 'localhost',
   user     : 'usuario',
@@ -61,13 +67,30 @@ var conexion = mysql.createConnection({
 });
 
 conexion.connect();
+*/
+/*
+const conexion = require('./config/database');
 
 conexion.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   if (error) throw error;
   console.log('The solution is: ', results[0].solution);
 });
 
-conexion.end();
+module.exports = conexion;
+*/
+//conexion.end();
+
+var sequelize = require('./config/database');
+
+sequelize
+  .authenticate()
+  .then(()=> {
+    console.log('conexion establecida');
+  })
+  .catch(err=> {
+    console.error('fallo al conectar');
+  });
+
 
 module.exports = app;
 
