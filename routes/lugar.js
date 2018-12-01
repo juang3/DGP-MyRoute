@@ -38,7 +38,7 @@ async function getLugar(idLugar){
       return idsImagen;
   });
 
-  console.log(idsImagen);
+  //console.log(idsImagen);
 
   for(var i = 0; i< idsImagen.length; i++){
     imagen = await sequelize.query('SELECT * FROM Imagen WHERE idImagen=' + idsImagen[i]).then(imagen =>{
@@ -50,6 +50,40 @@ async function getLugar(idLugar){
   lugares = JSON.stringify({'lugar':lugares});
   lugares = JSON.parse(lugares);
   lugares.imagenes = imagenes['imagenes'];
+
+  /*LUGAR CON SUS IMAGENES*/
+  
+  // get valoraciones
+
+  let ids_valoraciones = await sequelize.query('SELECT * FROM Valoracion_lugar WHERE idlugar=' + idLugar).then(valoraciones_lugares =>{
+    let idsValoraciones = new Array();
+    let aux = valoraciones_lugares[0];
+
+    for(var i=0; i < aux.length; i++){
+      idsValoraciones.push(aux[i].idValoracion);
+    }
+
+    return idsValoraciones;
+  });
+
+  console.log(ids_valoraciones);
+
+  let valoracion;
+  let valoraciones= JSON.parse('{"valoraciones":[]}');
+
+  for(var i=0; i< ids_valoraciones.length;i++){
+    valoracion = await sequelize.query('SELECT * FROM Valoracion WHERE idValoracion=' + ids_valoraciones[i]).then(valoracion =>{
+      return JSON.parse(JSON.stringify(valoracion[0][0]));
+    });
+    valoraciones['valoraciones'].push(valoracion);
+  }
+
+  lugares.valoraciones = valoraciones['valoraciones'];
+
+  //lugares = JSON.stringify({'lugar':lugares});
+  //lugares = JSON.parse(lugares);
+  //lugares.valoraciones_lugares = imagenes['imagenes'];
+
 
   return lugares;
 

@@ -340,6 +340,12 @@ ALTER TABLE `Valoracion_ruta`
 --
 
 --
+-- AUTO_INCREMENT for table `Usuario_registrado`
+--
+ALTER TABLE `Usuario_registrado`
+  MODIFY `idUsuario` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `Camino`
 --
 ALTER TABLE `Camino`
