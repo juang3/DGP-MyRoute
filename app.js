@@ -14,8 +14,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var lugaresRouter = require('./routes/lugares');
+var rutasRouter = require('./routes/rutas');
 var imagenRouter = require('./routes/imagen');
 var lugarRouter = require('./routes/lugar');
+var rutaRouter = require('./routes/ruta');
 var registroRouter = require('./routes/registro');
 
 // Módulo par ala gestión de la Base de Datos
@@ -36,8 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/lugares', lugaresRouter);
+app.use('/api/rutas', rutasRouter);
 app.use('/api/imagen',imagenRouter);
 app.use('/api/lugar',lugarRouter);
+app.use('/api/ruta',rutaRouter);
 app.use('/api/registro',registroRouter);
 
 // Recoge el error 404 y lo envía al manejador de errores

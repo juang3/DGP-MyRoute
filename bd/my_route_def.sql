@@ -95,6 +95,12 @@ INSERT INTO `Imagen_Lugar` VALUES (1,1),(2,2);
 /*!40000 ALTER TABLE `Imagen_Lugar` ENABLE KEYS */;
 UNLOCK TABLES;
 
+LOCK TABLES `Imagen_Ruta` WRITE;
+/*!40000 ALTER TABLE `Imagen_Ruta` DISABLE KEYS */;
+INSERT INTO `Imagen_Ruta` VALUES (1,1);
+/*!40000 ALTER TABLE `Imagen_Ruta` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `Imagen_Ruta`
 --
