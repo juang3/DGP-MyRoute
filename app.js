@@ -19,6 +19,7 @@ var imagenRouter = require('./routes/imagen');
 var lugarRouter = require('./routes/lugar');
 var rutaRouter = require('./routes/ruta');
 var registroRouter = require('./routes/registro');
+var loginRouter = require('./routes/login');
 
 // Módulo par ala gestión de la Base de Datos
 
@@ -43,6 +44,7 @@ app.use('/api/imagen',imagenRouter);
 app.use('/api/lugar',lugarRouter);
 app.use('/api/ruta',rutaRouter);
 app.use('/api/registro',registroRouter);
+app.use('/api/login',loginRouter);
 
 // Recoge el error 404 y lo envía al manejador de errores
 app.use(function(req, res, next) {
