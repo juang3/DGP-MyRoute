@@ -20,7 +20,7 @@ router.get('/', async function(req, res, next) {
 
 async function getRuta(idRuta){
 
-  let rutas = await sequelize.query('SELECT * FROM Ruta WHERE idRuta=\'' + idRutas + '\'').then(rutas =>{
+  let rutas = await sequelize.query('SELECT * FROM Ruta WHERE idRuta=\'' + idRuta + '\'').then(rutas =>{
     return rutas[0];
   });
 
@@ -78,7 +78,7 @@ async function getRuta(idRuta){
     valoraciones['valoraciones'].push(valoracion);
   }
 
-  lugares.valoraciones = valoraciones['valoraciones'];
+  rutas.valoraciones = valoraciones['valoraciones'];
 
   //lugares = JSON.stringify({'lugar':lugares});
   //lugares = JSON.parse(lugares);

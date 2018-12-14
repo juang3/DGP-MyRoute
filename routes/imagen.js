@@ -7,7 +7,7 @@ var sequelize = require('../config/database');
 
 /* GET users listing. */
 
-router.get('/*.png', function(req, res, next) {
+router.get('/*.jpg', function(req, res, next) {
 
   let image_name = req.url;
 

@@ -31,7 +31,7 @@ CREATE TABLE `Camino` (
   KEY `destino` (`destino`),
   CONSTRAINT `Camino_ibfk_1` FOREIGN KEY (`origen`) REFERENCES `Lugar` (`idLugar`),
   CONSTRAINT `Camino_ibfk_2` FOREIGN KEY (`destino`) REFERENCES `Lugar` (`idLugar`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,6 @@ CREATE TABLE `Camino` (
 
 LOCK TABLES `Camino` WRITE;
 /*!40000 ALTER TABLE `Camino` DISABLE KEYS */;
-INSERT INTO `Camino` VALUES (1,1,2),(2,1,3),(3,2,1),(4,3,1),(5,2,3),(6,3,2);
 /*!40000 ALTER TABLE `Camino` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +55,7 @@ CREATE TABLE `Imagen` (
   `descripcion` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
   `contenido` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idImagen`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +64,6 @@ CREATE TABLE `Imagen` (
 
 LOCK TABLES `Imagen` WRITE;
 /*!40000 ALTER TABLE `Imagen` DISABLE KEYS */;
-INSERT INTO `Imagen` VALUES (1,'Fotografía de la fachada interna del Edificio de la Escuela Técnica de Ingeniería Informática y Telecomunicaciones','/imagen_edificio_ETSIIT.jpg'),(2,'Fotografía de la fachada del edificio de la Facultad de Ciencias','/imagen_edificio_ciencias.jpg'),(3,'Fotografía de la fachada del Edificio de la Facultad de Bellas Artes','/imagen_edificio_bellas_artes.jpg'),(4,'Fotografía de la calle Camino de Ronda de Granada','/imagen_camino_ronda.jpg');
 /*!40000 ALTER TABLE `Imagen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +90,6 @@ CREATE TABLE `Imagen_Lugar` (
 
 LOCK TABLES `Imagen_Lugar` WRITE;
 /*!40000 ALTER TABLE `Imagen_Lugar` DISABLE KEYS */;
-INSERT INTO `Imagen_Lugar` VALUES (1,1),(2,2),(3,3);
 /*!40000 ALTER TABLE `Imagen_Lugar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +116,6 @@ CREATE TABLE `Imagen_Ruta` (
 
 LOCK TABLES `Imagen_Ruta` WRITE;
 /*!40000 ALTER TABLE `Imagen_Ruta` DISABLE KEYS */;
-INSERT INTO `Imagen_Ruta` VALUES (1,1),(2,4);
 /*!40000 ALTER TABLE `Imagen_Ruta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +161,7 @@ CREATE TABLE `Lugar` (
   `visible` tinyint(1) NOT NULL,
   `coordenadas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idLugar`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +170,6 @@ CREATE TABLE `Lugar` (
 
 LOCK TABLES `Lugar` WRITE;
 /*!40000 ALTER TABLE `Lugar` DISABLE KEYS */;
-INSERT INTO `Lugar` VALUES (1,'Facultad de Informatica','Edificio de la Escuela Técnica Superior de Ingeniería Informática','Facultad','Calle Periodista Daniel Saucedo Aranda s/n',1,'(37.196689,-3.624534)'),(2,'Facultad de Ciencias','Edificio de la Escuela de Ciencias de la Universidad de Granada','Facultad','Fuente Nueva s/n 18071',1,'(37.179752,-3.609726)'),(3,'Facultad de Bellas Artes','Edificio de la Facultad de Bellas Artes de la Universidad de Granada','Facultad','Avenida de Andalucia nº 27 18014',1,'(37.195627,-3.626910)');
 /*!40000 ALTER TABLE `Lugar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +187,7 @@ CREATE TABLE `Ruta` (
   `categoria` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `visible` tinyint(1) NOT NULL,
   PRIMARY KEY (`idRuta`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +196,6 @@ CREATE TABLE `Ruta` (
 
 LOCK TABLES `Ruta` WRITE;
 /*!40000 ALTER TABLE `Ruta` DISABLE KEYS */;
-INSERT INTO `Ruta` VALUES (1,'Ruta Facultades','Ruta que une la Facultad de Ciencias y la Escuela Técnica Superior de Ingeniería Informática y Telecomunicaciones','Facultades',1),(2,'Ruta Facultades 2','Ruta que une la Facultad de Ciencias, la Escuela Técnica Superior de Ingeniería Informática y Telecomunicaciones, y la Facultad de Bellas Artes','Facultades',1);
 /*!40000 ALTER TABLE `Ruta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,7 +216,7 @@ CREATE TABLE `Usuario_registrado` (
   `año_nacimiento` int(5) DEFAULT NULL,
   `lugar_nacimiento` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -281,7 +275,7 @@ CREATE TABLE `Usuario_visita` (
   KEY `idUsuario` (`idUsuario`) USING BTREE,
   CONSTRAINT `Usuario_visita_ibfk_1` FOREIGN KEY (`idLugar`) REFERENCES `Lugar` (`idLugar`),
   CONSTRAINT `Usuario_visita_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `Usuario_registrado` (`idUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,7 +302,7 @@ CREATE TABLE `Valoracion` (
   `Visible` tinyint(1) NOT NULL,
   `Num_reportes` int(10) NOT NULL,
   PRIMARY KEY (`idValoracion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -395,7 +389,7 @@ CREATE TABLE `ruta_lugar` (
   KEY `lugar_id` (`lugar_id`),
   CONSTRAINT `ruta_lugar_ibfk_1` FOREIGN KEY (`lugar_id`) REFERENCES `Lugar` (`idLugar`),
   CONSTRAINT `ruta_lugar_ibfk_2` FOREIGN KEY (`ruta_id`) REFERENCES `Ruta` (`idRuta`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -404,7 +398,6 @@ CREATE TABLE `ruta_lugar` (
 
 LOCK TABLES `ruta_lugar` WRITE;
 /*!40000 ALTER TABLE `ruta_lugar` DISABLE KEYS */;
-INSERT INTO `ruta_lugar` VALUES (1,1,1,1),(1,2,2,2),(2,1,1,3),(2,2,2,4),(2,3,3,5);
 /*!40000 ALTER TABLE `ruta_lugar` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -417,4 +410,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-14 12:44:38
+-- Dump completed on 2018-12-14 12:14:52
