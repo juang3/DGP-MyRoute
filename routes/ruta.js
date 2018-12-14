@@ -20,7 +20,7 @@ router.get('/', async function(req, res, next) {
 
 async function getRuta(idRuta){
 
-  let rutas = await sequelize.query('SELECT * FROM Ruta WHERE idRuta=\'' + idRutas + '\'').then(rutas =>{
+  let rutas = await sequelize.query('SELECT * FROM Ruta WHERE idRuta=\'' + idRuta + '\'').then(rutas =>{
     return rutas[0];
   });
 
@@ -47,11 +47,37 @@ async function getRuta(idRuta){
       imagenes['imagenes'].push(imagen);
   }
 
+
+
   rutas = JSON.stringify({'ruta':rutas});
   rutas = JSON.parse(rutas);
   rutas.imagenes = imagenes['imagenes'];
 
-  /*LUGAR CON SUS IMAGENES*/
+
+  //get lugares
+  let ids_lugares = await sequelize.query('SELECT * FROM ruta_lugar WHERE ruta_id=' + idRuta).then(lugares_rutas =>{
+    let idsLugares = new Array();
+    let aux = lugares_rutas[0];
+    for(var i=0; i < aux.length; i++){
+      idsLugares.push(aux[i].lugar_id);
+    }
+
+    return idsLugares;
+  });
+
+  console.log(ids_lugares);
+
+  let lugar;
+  let lugares= JSON.parse('{"lugares":[]}');
+
+  for(var i=0; i< ids_lugares.length;i++){
+    lugar = await sequelize.query('SELECT * FROM Lugar WHERE idLugar=' + ids_lugares[i]).then(lugar =>{
+      return JSON.parse(JSON.stringify(lugar[0][0]));
+    });
+    lugares['lugares'].push(lugar);
+  }
+
+  rutas.lugares = lugares['lugares'];
   
   // get valoraciones
 
@@ -78,11 +104,7 @@ async function getRuta(idRuta){
     valoraciones['valoraciones'].push(valoracion);
   }
 
-  lugares.valoraciones = valoraciones['valoraciones'];
-
-  //lugares = JSON.stringify({'lugar':lugares});
-  //lugares = JSON.parse(lugares);
-  //lugares.valoraciones_lugares = imagenes['imagenes'];
+  rutas.valoraciones = valoraciones['valoraciones'];
 
 
   return rutas;
