@@ -5,7 +5,8 @@
 % lecture notes as a handout:
 %\documentclass{article}
 %\usepackage{beamerarticle}
-
+\usepackage{graphicx,wrapfig,lipsum}
+%\graphicspath{ {images_latex/} }
 
 \useoutertheme{infolines}
 \usetheme{Hannover}
@@ -97,6 +98,36 @@
 \section{Arquitectura y tecnologia}
 
 \subsection{Arquitectura del sistema}
+
+	\begin{frame}{Arquitectura del sistema}
+		\begin{itemize}
+			\item {
+				Back-end : API REST.
+				
+			}
+			\item {
+				Front-end : SPA (Single Page Application).
+			}
+			\item {
+				Base de datos : Relacional.
+				%\begin{wrapfigure}{r}{0cm}
+				%\includegraphics{images_latex/postgresql}
+				%\end{wrapfigure} 
+				\hspace{1cm}
+				%\includegraphics[scale=0.1]{images_latex/postgresql}
+				
+			}
+		\end{itemize}
+		
+		
+		\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\textwidth]{images_latex/api}
+
+\end{figure}
+		%\includegraphics[scale=0.1]{images_latex/api}
+	
+	\end{frame}
 
 \subsection{Herramientas y tecnologia}
 
