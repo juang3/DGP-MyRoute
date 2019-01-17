@@ -1,12 +1,9 @@
-
 \documentclass{beamer}
-% Replace the \documentclass declaration above
-% with the following two lines to typeset your
-% lecture notes as a handout:
-%\documentclass{article}
-%\usepackage{beamerarticle}
+
 \usepackage{graphicx,wrapfig,lipsum}
 %\graphicspath{ {images_latex/} }
+
+%\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth-100, height=\paperheight]{images_latex/foto.jpg}}
 
 \useoutertheme{infolines}
 \usetheme{Hannover}
@@ -18,20 +15,10 @@
 \subtitle { \vspace{1cm} \color{black}Juan Germ\'an G\'omez G\'omez \\ \'Alvaro L\'opez Jim\'enez \\ Antonio Jos\'e Camarero Ortega \\ Rub\'en Mar\'in Asunci\'on \\ Rub\'en M\'ogica Garrido \\ Alejandro Ru\'iz Becerra \\ Valent\'in Pedrosa Campoy}
 
 \date{18/01/2019}
-% - Either use conference name or its abbreviation.
-% - Not really informative to the audience, more for people (including
-%   yourself) who are reading the slides online
 
 \subject{Prácticas DGP}
 % This is only inserted into the PDF information catalog. Can be left
 % out.
-
-% If you have a file called "university-logo-filename.xxx", where xxx
-% is a graphic format that can be processed by latex or pdflatex,
-% resp., then you can add a logo as follows:
-
-% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
-% \logo{\pgfuseimage{university-logo}}
 
 % Delete this, if you do not want the table of contents to pop up at
 % the beginning of each subsection:
@@ -42,17 +29,14 @@
   \end{frame}
 }
 
-% Let's get started
 \begin{document}
-
 
 \begin{frame}
   \titlepage 
 \end{frame}
 
 \begin{frame}{\'Indice}
-  \tiny
- 
+  \tiny 
   \tableofcontents
   % You might wish to add the option [pausesections]
 \end{frame}
@@ -61,7 +45,7 @@
 % and table of contents.
 \section{Gesti\'on del Equipo}
 
-\subsection{Organizacion del Equipo}
+\subsection{Organizaci\'on del Equipo}
 
 \begin{frame}{Titulo diapositiva}{Optional Subtitle}
   \begin{itemize}
@@ -74,28 +58,40 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Comunicacion}
+\subsection{Comunicaci\'on}
 
-\begin{frame}{Titulo diapositiva}{Optional Subtitle}
-  \begin{itemize}
-  \item {
-    My first point.
-  }
-  \item {
-    My second point.
-  }
-  \end{itemize}
+\begin{frame}{Comunicaci\'on Externa}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\paperwidth, height=0.4\paperheight]{images_latex/reuniones} 
+	\hspace{0.7cm}
+	\includegraphics[width=0.35\paperwidth, height=0.4\paperheight]{images_latex/entrega}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}{Comunicaci\'on Interna}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\paperwidth, height=0.4\paperheight]{images_latex/reuniones2}
+	\hspace{0.7cm}
+	\includegraphics[width=0.35\paperwidth, height=0.4\paperheight]{images_latex/telegram}
+	\includegraphics[width=0.35\paperwidth, height=0.4\paperheight]{images_latex/drive}
+	\hspace{0.7cm}
+	\includegraphics[width=0.35\paperwidth, height=0.4\paperheight]{images_latex/github}
+	\end{figure}
+
 \end{frame}
 
 \subsection{Seguimiento}
 
 \section{Gesti\'on del Proyecto}
 
-\subsection{Tareas realizadas en cada iteracion}
+\subsection{Tareas realizadas en cada iteraci\'on}
 
-\subsection{Gestion de la calidad y Accesibilidad}
+\subsection{Gesti\'on de la calidad y Accesibilidad}
 
-\section{Arquitectura y tecnologia}
+\section{Arquitectura y tecnolog\'ia}
 
 \subsection{Arquitectura del sistema}
 
@@ -113,7 +109,6 @@
 				%\begin{wrapfigure}{r}{0cm}
 				%\includegraphics{images_latex/postgresql}
 				%\end{wrapfigure} 
-				\hspace{1cm}
 				%\includegraphics[scale=0.1]{images_latex/postgresql}
 				
 			}
@@ -121,31 +116,75 @@
 		
 		
 		\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.25\textwidth]{images_latex/api}
+			%\hspace{0.3cm}
+    		\centering
+    		\includegraphics[width=0.7\textwidth, height=0.67\textheight]{images_latex/api}
 
-\end{figure}
+		\end{figure}
 		%\includegraphics[scale=0.1]{images_latex/api}
 	
 	\end{frame}
 
-\subsection{Herramientas y tecnologia}
+\subsection{Herramientas y tecnolog\'ia}
 
-\section{Pliego Tecnico}
+\section{Pliego T\'ecnico}
 
 \subsection{Cumplimiento del Pliego}
 
-\subsection{Valor Anadido}
+\subsection{Valor A\~nadido}
 
 \section{Retrospectiva}
 
-\subsection{Analisis DAFO}
+\subsection{An\'alisis DAFO}
+
+\begin{frame}{An\'alisis DAFO}
+	\includegraphics[width=0.8\paperwidth, height=0.8\paperheight]{images_latex/DAFO}
+	  
+\end{frame}
 
 \subsection{Lecciones aprendidas}
 
-\subsection{Autocritica y critica a la asignatura}
+\subsection{Autocr\'itica y cr\'itica a la asignatura}
 
-\subsection{Valoracion Final}
+\begin{frame}{Autocr\'itica}
+  \begin{itemize}
+  \item { Buen trabajo y buenos resultados. }
+  \item { Aspectos a mejorar de cara a futuros proyectos como equipo:
+    \begin{itemize}
+    \item {Mejorar la comunicaci\'on}
+    \item {Ser m\'as met\'odicos}
+    \item {Mejorar las habilidades t\'ecnicas de algunos miembros}
+    \item {Mejorar la organizaci\'on para evitar bloqueos}
+    \end{itemize}
+  }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Cr\'itica a la asignatura}
+  \begin{itemize}
+  \item { ?`C\'omo se gestiona un equipo?}
+  \item { ?`C\'omo se gestiona un proyecto?}
+  \item {?`C\'omo es trabajar en equipo?}
+  \end{itemize}
+  
+    \begin{itemize}
+    \item {No existe jerarqu\'ia}
+    \item {Libertad del proyecto y falta de experiencia conlleva confusi\'on}
+    \end{itemize}
+    
+\end{frame}
+
+\subsection{Valoraci\'on Final}
+
+\begin{frame}{Valoraci\'on Final}
+
+\end{frame}
+
+\begin{frame}{Gracias}
+	\centering
+	\includegraphics[width=0.6\paperwidth, height = 0.2\paperheight]{images_latex/logo}
+\end{frame}
+
 
 % You can reveal the parts of a slide one at a time
 % with the \pause command:
