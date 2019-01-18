@@ -47,16 +47,63 @@
 
 \subsection{Organizaci\'on del Equipo}
 
-\begin{frame}{Titulo diapositiva}{Optional Subtitle}
-  \begin{itemize}
-  \item {
-    My first point.
-  }
-  \item {
-    My second point.
-  }
-  \end{itemize}
+\begin{frame}{Organizaci\'on}{Objetivos de cada iteraci\'on}
+  \begin{tabular}{cll}
+  Iteraci\'on  & Objetivos & Organizaci\'on \\\hline \\
+  1  &  An\'alisis Etnogr\'afico,  & Todos \\
+     &  Dise\~no visual            & Dise\~no\\[0.3cm]
+  2  &  Prototipo  & Backend, Frontend \\[0.3cm]
+  3  &  Funcionalidad & Dise\~no, Backend, Frontend
+  \end{tabular}
 \end{frame}
+
+
+% Iteración 1
+\begin{frame}{Organizaci\'on}{Iteraci\'on 1}
+\includegraphics[scale=0.1]{images_latex/org_itr1}
+\end{frame}
+
+\begin{frame}{Organizaci\'on}{Iteraci\'on 1, (18 tareas)}
+\centering
+\hspace{1cm}
+\break
+\newline
+\break
+\includegraphics[width=0.8\paperwidth]{images_latex/gantt_itr1}
+\end{frame}
+
+
+
+%Iteración 2
+\begin{frame}{Organizaci\'on}{Iteraci\'on 2}
+\includegraphics[scale=0.1]{images_latex/org_itr2}
+\end{frame}
+
+\begin{frame}{Organizaci\'on}{Iteraci\'on 2, (9 plan, 4 no plan)}
+\centering
+\hspace{1cm}
+\break
+\newline
+\break
+\includegraphics[width=0.8\paperwidth]{images_latex/gantt_itr2}
+\end{frame}
+
+
+
+%Iteración 3
+\begin{frame}{Organizaci\'on}{Iteraci\'on 3}
+\includegraphics[scale=0.1]{images_latex/org_itr3}
+\end{frame}
+
+\begin{frame}{Organizaci\'on}{Iteraci\'on 3, (72 plan, 4 no plan)}
+\centering
+\hspace{1cm}
+\break
+\newline
+\break
+\includegraphics[width=0.8\paperwidth]{images_latex/gantt_itr3}
+\end{frame}
+
 
 \subsection{Comunicaci\'on}
 
@@ -147,7 +194,7 @@
 		\begin{figure}[h]
 			%\hspace{0.3cm}
     		\centering
-    		\includegraphics[width=0.7\textwidth, height=0.67\textheight]{images_latex/api}
+    		\includegraphics[width=0.6\textwidth, height=0.4\textheight]{images_latex/rest-api}
 
 		\end{figure}
 		%\includegraphics[scale=0.1]{images_latex/api}
@@ -155,6 +202,17 @@
 	\end{frame}
 
 \subsection{Herramientas y tecnolog\'ia}
+\begin{frame}{Herramientas y tecnolog\'ia}
+		\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\paperwidth, height=0.3\paperheight]{images_latex/laravel}
+	\hspace{0.1cm}
+	\includegraphics[width=0.35\paperwidth, height=0.2\paperheight]{images_latex/angular}
+	\centering
+	\includegraphics[width=0.4\paperwidth, height=0.35\paperheight]{images_latex/postgresql-nombre}
+	\end{figure}
+	
+	\end{frame}
 
 \section{Pliego T\'ecnico}
 
